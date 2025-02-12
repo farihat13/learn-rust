@@ -2,7 +2,7 @@ use rand::Rng;
 use std::io;
 
 
-fn guessing_game(){
+fn main(){
     // const SECRET:i32 = 34;
 
     println!("Guess the number!");

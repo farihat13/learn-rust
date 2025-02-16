@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package calc;
+
+service Calculator {
+    rpc Echo(EchoMsg) returns (EchoMsg);
+    rpc Add(OpReq) returns (OpResp);
+}
+
+message EchoMsg {
+    string msg = 1;
+}
+
+message OpReq {
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message OpResp {
+    int32 result = 1;
+    string error = 2;
+}

@@ -3,17 +3,22 @@ struct User {
     email: String,
     username: String,
     active: bool,
-    c: u8,
 }
 
 impl User {
     fn print_active_status(&self) {
-        println!("inside print_active_status: {}", self.active);
+        println!(
+            "{} inside print_active_status: {}",
+            self.username, self.active
+        );
     }
 
     fn toggle_active_status(&mut self) {
         self.active = !self.active;
-        println!("toggled from {} to {}", !self.active, self.active);
+        println!(
+            "{} active status toggled from {} to {}",
+            self.username, !self.active, self.active
+        );
     }
 }
 
@@ -22,7 +27,6 @@ fn main() {
         email: String::from("someone@example.com"),
         username: String::from("someusername123"),
         active: true,
-        c: 1,
     };
 
     user1.email = String::from("anotheremail@example.com");

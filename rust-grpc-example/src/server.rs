@@ -1,4 +1,4 @@
-use tonic::{transport::Server, Request, Response, Status};
+use tonic::{transport::Server, Response};
 pub mod calc {
     // tonic::include_proto!("calc");
     include!("proto/calc.rs");
@@ -17,16 +17,14 @@ impl Calculator for MyCalculator {
     ) -> std::result::Result<tonic::Response<EchoMsg>, tonic::Status> {
         let req = request.into_inner();
         println!("Request ECHO {}", req.msg);
-        Ok(Response::new(EchoMsg {
-            msg: req.msg,
-        }))
+        Ok(Response::new(EchoMsg { msg: req.msg }))
     }
     async fn add(
         &self,
         request: tonic::Request<OpReq>,
     ) -> std::result::Result<tonic::Response<OpResp>, tonic::Status> {
         let req = request.into_inner();
-        println!("Request ADD {} {}",  req.num1, req.num2);
+        println!("Request ADD {} {}", req.num1, req.num2);
         let resp = OpResp {
             result: req.num1 + req.num2,
             error: "".into(),

@@ -1,10 +1,9 @@
-use tonic::transport::Channel;
 pub mod calc {
     // tonic::include_proto!("calc");
     include!("proto/calc.rs");
 }
 use calc::calculator_client::CalculatorClient;
-use calc::{EchoMsg, OpReq, OpResp};
+use calc::{EchoMsg, OpReq};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

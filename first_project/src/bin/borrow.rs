@@ -15,6 +15,7 @@ fn main() {
     //pass_by_mut_ref(&mut s);
 
     let (s, len) = return_tuple(s);
+    println!("s: {s}, len: {len}");
 }
 
 // fn take_ownership(str:String) {

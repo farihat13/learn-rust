@@ -1,0 +1,45 @@
+# Rust build directory
+target/
+
+# Cargo files
+**/*.rs.bk
+Cargo.lock  # Ignore for libraries, but include for binaries if necessary
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# macOS system files
+.DS_Store
+
+# Linux system files
+*.swp    # Vim swap files
+*.swo    # Vim swap files
+*.bak    # Backup files
+*~       # Temporary files
+
+# Rust compilation artifacts
+*.rmeta
+*.rlib
+*.dSYM/
+*.log
+
+# Testing and benchmarking outputs
+/tests/output/
+benches/*.svg
+benches/*.html
+
+# Coverage and profiling
+/coverage/
+*.profdata
+*.profraw
+
+# Dependency manager files
+/node_modules/
+
+# Rust analyzer files
+rust-analyzer.json
+
+# Miscellaneous system files
+Thumbs.db  # Windows thumbnail cache (if working cross-platform)
